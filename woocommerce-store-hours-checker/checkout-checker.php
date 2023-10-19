@@ -25,7 +25,7 @@ function add_custom_checkout_error_style() {
             border-top: 0 !important;
         }
 		
-		.woocommerce .woocommerce-notices-wrapper .woocommerce-error li {
+	.woocommerce .woocommerce-notices-wrapper .woocommerce-error li {
             list-style-type: none;
         }
 
