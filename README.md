@@ -44,7 +44,9 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 
 ## Screenshot
 ![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-0.jpg)
+
 ![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-1.jpg)
+
 ![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-2.jpg)
 
 ## Contributing
