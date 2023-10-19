@@ -75,15 +75,15 @@ function add_custom_checkout_popup() {
         .popup-content {
             text-align: center;
             padding: 40px;
-    		background-color: <?php echo esc_attr($background_color); ?>;
-			border-radius: 5px;
+    	    background-color: <?php echo esc_attr($background_color); ?>;
+	    border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-			border: 25px solid <?php echo esc_attr($border_color); ?>;
+            border: 25px solid <?php echo esc_attr($border_color); ?>;
         }
 
         .popup-content p {
-    		color: <?php echo esc_attr($text_color); ?>;
-			font-size: 1.2em;
+    	    color: <?php echo esc_attr($text_color); ?>;
+	    font-size: 1.2em;
         }
 
         .popup-content p:before {
@@ -92,7 +92,7 @@ function add_custom_checkout_popup() {
             margin-right: 5px;
         }
 		
-		#close-popup {
+	#close-popup {
             background-color: #111;
             color: #fff;
             border: none;
