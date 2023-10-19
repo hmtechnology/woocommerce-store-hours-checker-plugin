@@ -5,6 +5,20 @@ function reset_store_hours() {
     update_option('store_hours', array()); // Set store_hours to an empty array
 }
 
+// Function to get if store is open or closed
+function get_store_hours_status() {
+    return is_store_open() ? 'Open' : 'Closed';
+}
+
+// Function to refresh the page after saving store hours 
+function add_refresh_on_save() {
+    if (isset($_POST['submit_store_hours'])) {
+        echo '<script>window.location.reload();</script>';
+    }
+}
+
+add_action('admin_notices', 'add_refresh_on_save');
+
 // Function to check if the store is open
 function is_store_open() {
     $current_day = strtolower(date('l'));
