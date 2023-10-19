@@ -36,3 +36,13 @@ function is_store_open() {
 
     return false;
 }
+
+
+// Enqueue necessary scripts and styles for the WordPress admin panel.
+function enqueue_admin_scripts() {
+    wp_enqueue_script('jquery');
+    wp_enqueue_script('wp-color-picker');
+    wp_enqueue_style('wp-color-picker');
+}
+
+add_action('admin_enqueue_scripts', 'enqueue_admin_scripts');
