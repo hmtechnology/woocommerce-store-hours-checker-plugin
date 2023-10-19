@@ -137,3 +137,15 @@ function disable_checkout_outside_store_hours() {
 }
 
 add_action('wp', 'disable_checkout_outside_store_hours');
+
+// Disable the "Place Order" button on the checkout page
+function disable_place_order_button($button_html) {
+    if (!is_checkout()) return $button_html;
+
+    if (!is_store_open()) {
+        return ''; // Returns an empty string to hide the button
+    }
+    return $button_html;
+}
+
+add_filter('woocommerce_order_button_html', 'disable_place_order_button');
