@@ -19,6 +19,42 @@ function add_reset_store_hours_button() {
 
 add_action('admin_notices', 'add_reset_store_hours_button');
 
+// Add store hours status in admin notice
+function add_store_hours_status() {
+    $screen = get_current_screen();
+    if ($screen && $screen->id === 'toplevel_page_store-hours-settings') {
+    echo '<div class="store-hours-status ' . (is_store_open() ? 'open' : 'closed') . '">';
+    echo 'Store Status: ' . (is_store_open() ? 'OPEN' : 'CLOSED');
+    echo '</div>';
+    }
+}
+
+add_action('admin_notices', 'custom_store_hours_status_style');
+add_action('admin_notices', 'add_store_hours_status');
+
+// Add custom styles to store hours status
+function custom_store_hours_status_style() {
+    echo '<style>
+        .store-hours-status {
+            display: inline-block;
+            padding: 10px 15px;
+            font-size: 16px;
+            border-radius: 5px;
+            margin: 10px 0;
+        }
+
+        .store-hours-status.open {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .store-hours-status.closed {
+            background-color: #F44336;
+            color: white;
+        }
+    </style>';
+}
+
 // Define a function to add a menu and submenu in the administration panel
 function custom_store_hours_menu() {
     add_menu_page('WooCoomerce Store Hours', 'WooCoomerce Store Hours', 'manage_options', 'store-hours-settings', 'store_hours_page');
