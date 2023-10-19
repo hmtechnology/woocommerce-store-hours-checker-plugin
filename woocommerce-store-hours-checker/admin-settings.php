@@ -340,7 +340,7 @@ function store_hours_settings_page() {
 					<th scope="row">Background Color</th>
 					<td>
 						<?php
-							$background_color = esc_attr(get_option('custom_css_background_color', '#ff3333'));
+						$background_color = esc_attr(get_option('custom_css_background_color', '#ff3333'));
 						?>
 						<input type="text" name="custom_css_background_color" value="<?php echo $background_color; ?>" class="color-field" />
 						<p>Select the background color for the error message.</p>
@@ -350,7 +350,7 @@ function store_hours_settings_page() {
 					<th scope="row">Border Color</th>
 					<td>
 						<?php
-							$border_color = esc_attr(get_option('custom_css_border_color', '#ff3333'));
+						$border_color = esc_attr(get_option('custom_css_border_color', '#ff3333'));
 						?>
 						<input type="text" name="custom_css_border_color" value="<?php echo $border_color; ?>" class="color-field" />
 						<p>Select the border color for the error message.</p>
@@ -360,10 +360,20 @@ function store_hours_settings_page() {
 					<th scope="row">Text Color</th>
 					<td>
 						<?php
-							$text_color = esc_attr(get_option('custom_css_color_text', '#333333'));
+						$text_color = esc_attr(get_option('custom_css_color_text', '#333333'));
 						?>
 						<input type="text" name="custom_css_color_text" value="<?php echo $text_color; ?>" class="color-field" />
 						<p>Choose the text color for the error message.</p>
+					</td>
+				</tr>
+				<tr valign="top">
+					<th scope="row">Background Text</th>
+					<td>
+						<?php
+						$error_background_color = esc_attr(get_option('custom_error_background_color', '#f7f7f7'));
+						?>
+						<input type="text" name="custom_error_background_color" value="<?php echo $error_background_color; ?>" class="color-field" />
+						<p>Select the background color for the error message box.</p>
 					</td>
 				</tr>
 			</table>
@@ -372,15 +382,15 @@ function store_hours_settings_page() {
         </form>
     </div>
 
-<script>
-	jQuery(document).ready(function($) {
-		$('.color-field').wpColorPicker();
-	});
-</script>
+	<script>
+		jQuery(document).ready(function($) {
+			$('.color-field').wpColorPicker();
+		});
+	</script>
     <?php
 }
 
-// Update the custom message only if it is not empty.
+// Update the custom message and error message background color only if they are not empty.
 if (isset($_POST['submit_custom_message'])) {
     $custom_message = sanitize_text_field($_POST['custom_store_closed_message']);
     if (empty($custom_message)) {
@@ -396,4 +406,7 @@ if (isset($_POST['submit_custom_message'])) {
 
     $text_color = sanitize_text_field($_POST['custom_css_color_text']);
     update_option('custom_css_color_text', $text_color);
+	
+	$error_background_color = sanitize_text_field($_POST['custom_error_background_color']);
+    update_option('custom_error_background_color', $error_background_color);
 }
