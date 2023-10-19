@@ -293,7 +293,7 @@ function store_hours_settings_page() {
                 <tr valign="top">
                     <th scope="row">Custom Error Message</th>
                     <td>
-                        <input type="text" name="custom_store_closed_message" value="<?php echo esc_attr($custom_error_message); ?>" />
+                        <input type="text" name="custom_store_closed_message" value="<?php echo esc_attr($custom_error_message); ?>" style="width: 350px;" />
                         <p>Enter a custom error message to display when the store is closed.</p>
                     </td>
                 </tr>
