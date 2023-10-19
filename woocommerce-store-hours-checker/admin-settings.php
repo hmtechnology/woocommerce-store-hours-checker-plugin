@@ -333,7 +333,24 @@ function store_hours_settings_page() {
 					</td>
 				</tr>
 			</table>
-
+			<table class="form-table">
+				<tr valign="top">
+					<th scope="row">Text Color</th>
+					<td>
+						<select name="custom_css_color_text">
+							<option value="#333333" <?php selected(get_option('custom_css_color_text', ''), '#ff3333'); ?>>Default (Black)</option>
+							<option value="#33ff33" <?php selected(get_option('custom_css_color_text', ''), '#33ff33'); ?>>Green</option>
+							<option value="#3333ff" <?php selected(get_option('custom_css_color_text', ''), '#3333ff'); ?>>Blue</option>
+							<option value="#ffff33" <?php selected(get_option('custom_css_color_text', ''), '#ffff33'); ?>>Yellow</option>
+							<option value="#ff33ff" <?php selected(get_option('custom_css_color_text', ''), '#ff33ff'); ?>>Purple</option>
+							<option value="#ff3333" <?php selected(get_option('custom_css_color_text', ''), '#333333'); ?>>Red</option>
+							<option value="#ffffff" <?php selected(get_option('custom_css_color_text', ''), '#ffffff'); ?>>White</option>
+							<option value="#999999" <?php selected(get_option('custom_css_color_text', ''), '#999999'); ?>>Gray</option>
+						</select>
+						<p>Choose the text color for the error message.</p>
+					</td>
+				</tr>
+			</table>
             <input type="hidden" name="submit_custom_message" value="1">
             <?php submit_button(); ?>
         </form>
@@ -341,7 +358,7 @@ function store_hours_settings_page() {
     <?php
 }
 
-// Update the custom message only if it is not empty.
+// Update the custom message only if it is not empty
 if (isset($_POST['submit_custom_message'])) {
     $custom_message = sanitize_text_field($_POST['custom_store_closed_message']);
     if (empty($custom_message)) {
@@ -350,9 +367,11 @@ if (isset($_POST['submit_custom_message'])) {
     update_option('custom_store_closed_message', $custom_message);
 
     $background_color = sanitize_text_field($_POST['custom_css_background_color']);
-    update_option('custom_css_background_color', $background_color); 
+    update_option('custom_css_background_color', $background_color);
 
     $border_color = sanitize_text_field($_POST['custom_css_border_color']);
     update_option('custom_css_border_color', $border_color);
-}
 
+    $text_color = sanitize_text_field($_POST['custom_css_color_text']);
+    update_option('custom_css_color_text', $text_color);
+}
