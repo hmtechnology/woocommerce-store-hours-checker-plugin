@@ -9,9 +9,10 @@ The WooCommerce Store Hours Checker is a WordPress plugin designed to help you m
 3. [Installation](#installation)
 4. [Configuration](#configuration)
 5. [Usage](#usage)
-6. [Contributing](#contributing)
-7. [License](#license)
-7. [Author](#author)
+6. [Screenshot](#screenshot)
+7. [Contributing](#contributing)
+8. [License](#license)
+9. [Author](#author)
 
 ## Description
 The WooCommerce Store Hours Checker plugin is a versatile WordPress extension designed for businesses that need to manage and enforce specific store hours. With this plugin, you can set and configure your store's operating hours and restrict checkout access outside these hours. You can also define a custom error message to display to customers attempting to check out when the store is closed.
@@ -40,6 +41,11 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 2. Configure specific time slots for each day as needed.
 3. Customize the error message and CSS styles.
 4. Customers will see the error message and be unable to check out outside of store hours.
+
+## Screenshot
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-0.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-1.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-2.jpg)
 
 ## Contributing
 Contributions are welcome! If you have any improvements or new features to suggest, please open an issue or submit a pull request. We appreciate your feedback.
