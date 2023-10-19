@@ -20,8 +20,8 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 - **Timezone Selection:** Choose the store's timezone to ensure accurate time calculations.
 - **Store Hours Configuration:** Set the operating hours for each day of the week.
 - **Multiple Time Slots:** Configure multiple opening and closing time slots for each day.
-- **Custom Error Message:** Customize the message shown to customers when the store is closed.
-- **Custom CSS Styles:** Set background and border colors for the error message.
+- **Custom Error Message Popup:** Present a customizable error message as a popup to customers when the store is closed.
+- **Custom CSS Styles:** Set background, border colors and color text for the error message.
 - **Store Hour Status:** Display the current store hour status to indicate whether the online store is considered open or closed.
 - **Reset Functionality:** Easily reset store hours to default settings.
 
