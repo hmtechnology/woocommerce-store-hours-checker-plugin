@@ -86,7 +86,13 @@ function add_custom_checkout_popup() {
 			font-size: 1.2em;
         }
 
-        #close-popup {
+        .popup-content p:before {
+            content: "\274C ";
+            font-size: 20px;
+            margin-right: 5px;
+        }
+		
+		#close-popup {
             background-color: #111;
             color: #fff;
             border: none;
