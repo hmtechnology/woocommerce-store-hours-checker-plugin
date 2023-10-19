@@ -129,9 +129,9 @@ function disable_checkout_outside_store_hours() {
         if (empty($custom_error_message)) {
             $custom_error_message = 'The store is closed outside of the opening hours.';
         }
-		wc_add_notice($custom_error_message, 'error');
+	wc_add_notice($custom_error_message, 'error');
         add_action('wp_footer', 'add_custom_checkout_popup');
-		remove_action('woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20);
+	remove_action('woocommerce_proceed_to_checkout', 'woocommerce_button_proceed_to_checkout', 20);
         add_action('wp_head', 'add_custom_checkout_error_style');
     }
 }
