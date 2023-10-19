@@ -293,7 +293,7 @@ function store_hours_settings_page() {
                 <tr valign="top">
                     <th scope="row">Custom Error Message</th>
                     <td>
-                        <input type="text" name="custom_store_closed_message" value="<?php echo esc_attr($custom_error_message); ?>" style="width: 350px;" />
+                        <input type="text" name="custom_store_closed_message" value="<?php echo esc_attr($custom_error_message); ?>" style="width: 350px;"/>
                         <p>Enter a custom error message to display when the store is closed.</p>
                     </td>
                 </tr>
@@ -303,50 +303,21 @@ function store_hours_settings_page() {
 				<tr valign="top">
 					<th scope="row">Background Color</th>
 					<td>
-						<select name="custom_css_background_color">
-							<option value="#ff6666" <?php selected(get_option('custom_css_background_color', ''), '#ff6666'); ?>>Default (Red)</option>
-							<option value="#66ff66" <?php selected(get_option('custom_css_background_color', ''), '#66ff66'); ?>>Green</option>
-							<option value="#6666ff" <?php selected(get_option('custom_css_background_color', ''), '#6666ff'); ?>>Blue</option>
-							<option value="#ffff66" <?php selected(get_option('custom_css_background_color', ''), '#ffff66'); ?>>Yellow</option>
-							<option value="#ff33ff" <?php selected(get_option('custom_css_background_color', ''), '#ff33ff'); ?>>Purple</option>
-							<option value="#333333" <?php selected(get_option('custom_css_background_color', ''), '#333333'); ?>>Black</option>
-							<option value="#ffffff" <?php selected(get_option('custom_css_background_color', ''), '#ffffff'); ?>>White</option>
-							<option value="#999999" <?php selected(get_option('custom_css_background_color', ''), '#999999'); ?>>Gray</option>
-						</select>
+						<input type="text" name="custom_css_background_color" value="<?php echo esc_attr(get_option('custom_css_background_color', '#ff3333')); ?>" class="color-field" />
 						<p>Select the background color for the error message.</p>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th scope="row">Border Color</th>
 					<td>
-						<select name="custom_css_border_color">
-							<option value="#ff3333" <?php selected(get_option('custom_css_border_color', ''), '#ff3333'); ?>>Default (Red)</option>
-							<option value="#33ff33" <?php selected(get_option('custom_css_border_color', ''), '#33ff33'); ?>>Green</option>
-							<option value="#3333ff" <?php selected(get_option('custom_css_border_color', ''), '#3333ff'); ?>>Blue</option>
-							<option value="#ffff33" <?php selected(get_option('custom_css_border_color', ''), '#ffff33'); ?>>Yellow</option>
-							<option value="#ff33ff" <?php selected(get_option('custom_css_border_color', ''), '#ff33ff'); ?>>Purple</option>
-							<option value="#333333" <?php selected(get_option('custom_css_border_color', ''), '#333333'); ?>>Black</option>
-							<option value="#ffffff" <?php selected(get_option('custom_css_border_color', ''), '#ffffff'); ?>>White</option>
-							<option value="#999999" <?php selected(get_option('custom_css_border_color', ''), '#999999'); ?>>Gray</option>
-						</select>
+						<input type="text" name="custom_css_border_color" value="<?php echo esc_attr(get_option('custom_css_border_color', '#ff3333')); ?>" class="color-field" />
 						<p>Select the border color for the error message.</p>
 					</td>
 				</tr>
-			</table>
-			<table class="form-table">
 				<tr valign="top">
 					<th scope="row">Text Color</th>
 					<td>
-						<select name="custom_css_color_text">
-							<option value="#333333" <?php selected(get_option('custom_css_color_text', ''), '#333333'); ?>>Default (Black)</option>
-							<option value="#33ff33" <?php selected(get_option('custom_css_color_text', ''), '#33ff33'); ?>>Green</option>
-							<option value="#3333ff" <?php selected(get_option('custom_css_color_text', ''), '#3333ff'); ?>>Blue</option>
-							<option value="#ffff33" <?php selected(get_option('custom_css_color_text', ''), '#ffff33'); ?>>Yellow</option>
-							<option value="#ff33ff" <?php selected(get_option('custom_css_color_text', ''), '#ff33ff'); ?>>Purple</option>
-							<option value="#ff3333" <?php selected(get_option('custom_css_color_text', ''), '#ff3333'); ?>>Red</option>
-							<option value="#ffffff" <?php selected(get_option('custom_css_color_text', ''), '#ffffff'); ?>>White</option>
-							<option value="#999999" <?php selected(get_option('custom_css_color_text', ''), '#999999'); ?>>Gray</option>
-						</select>
+						<input type="text" name="custom_css_color_text" value="<?php echo esc_attr(get_option('custom_css_color_text', '#333333')); ?>" class="color-field" />
 						<p>Choose the text color for the error message.</p>
 					</td>
 				</tr>
@@ -355,10 +326,16 @@ function store_hours_settings_page() {
             <?php submit_button(); ?>
         </form>
     </div>
+
+<script>
+	jQuery(document).ready(function($) {
+		$('.color-field').wpColorPicker();
+	});
+</script>
     <?php
 }
 
-// Update the custom message only if it is not empty
+// Update the custom message only if it is not empty.
 if (isset($_POST['submit_custom_message'])) {
     $custom_message = sanitize_text_field($_POST['custom_store_closed_message']);
     if (empty($custom_message)) {
