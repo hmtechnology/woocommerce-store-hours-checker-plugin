@@ -74,7 +74,7 @@ function add_custom_checkout_popup() {
 
         .popup-content {
             text-align: center;
-            padding: 40px;
+            padding: 30px;
     	    background-color: <?php echo esc_attr($background_color); ?>;
 	    border-radius: 5px;
             box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
