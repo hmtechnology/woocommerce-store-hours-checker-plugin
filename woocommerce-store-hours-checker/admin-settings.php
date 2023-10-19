@@ -303,21 +303,30 @@ function store_hours_settings_page() {
 				<tr valign="top">
 					<th scope="row">Background Color</th>
 					<td>
-						<input type="text" name="custom_css_background_color" value="<?php echo esc_attr(get_option('custom_css_background_colo', '#ff3333')); ?>" class="color-field" />
+						<?php
+							$background_color = esc_attr(get_option('custom_css_background_color', '#ff3333'));
+						?>
+						<input type="text" name="custom_css_background_color" value="<?php echo $background_color; ?>" class="color-field" />
 						<p>Select the background color for the error message.</p>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th scope="row">Border Color</th>
 					<td>
-						<input type="text" name="custom_css_border_color" value="<?php echo esc_attr(get_option('custom_css_border_colo', '#ff3333')); ?>" class="color-field" />
+						<?php
+							$border_color = esc_attr(get_option('custom_css_border_color', '#ff3333'));
+						?>
+						<input type="text" name="custom_css_border_color" value="<?php echo $border_color; ?>" class="color-field" />
 						<p>Select the border color for the error message.</p>
 					</td>
 				</tr>
 				<tr valign="top">
 					<th scope="row">Text Color</th>
 					<td>
-						<input type="text" name="custom_css_color_text" value="<?php echo esc_attr(get_option('custom_css_color_tex', '#333333')); ?>" class="color-field" />
+						<?php
+							$text_color = esc_attr(get_option('custom_css_color_text', '#333333'));
+						?>
+						<input type="text" name="custom_css_color_text" value="<?php echo $text_color; ?>" class="color-field" />
 						<p>Choose the text color for the error message.</p>
 					</td>
 				</tr>
