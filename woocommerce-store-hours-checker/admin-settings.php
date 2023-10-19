@@ -39,7 +39,6 @@ function custom_store_hours_status_style() {
             display: inline-block;
             padding: 10px 15px;
             font-size: 16px;
-            border-radius: 5px;
             margin: 10px 0;
         }
 
