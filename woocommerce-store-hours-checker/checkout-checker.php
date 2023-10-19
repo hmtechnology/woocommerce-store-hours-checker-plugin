@@ -7,7 +7,7 @@ function add_custom_checkout_error_style() {
     $text_color = get_option('custom_css_color_text', '');
 	
     echo '<style>
-        .woocommerce .woocommerce-notices-wrapper {
+        .woocommerce-notices-wrapper {
             background-color: ' . esc_attr($border_color) . ';
             padding: 10px;
             border: 1px solid ' . esc_attr($border_color) . ';
@@ -15,27 +15,27 @@ function add_custom_checkout_error_style() {
             margin: 20px 0;
         }
 
-        .woocommerce .woocommerce-notices-wrapper .woocommerce-error li {
+        .woocommerce-notices-wrapper .woocommerce-error li {
             color: ' . esc_attr($text_color) . ';
             list-style-type: none;
         }
 
-        .woocommerce .woocommerce-notices-wrapper .woocommerce-error {
+        .woocommerce-notices-wrapper .woocommerce-error {
             background: ' . esc_attr($background_color) . ';
             border-top: 0 !important;
         }
 		
-	.woocommerce .woocommerce-notices-wrapper .woocommerce-error li {
+	.woocommerce-notices-wrapper .woocommerce-error li {
             list-style-type: none;
         }
 
-        .woocommerce .woocommerce-notices-wrapper .woocommerce-error li::before {
+        .woocommerce-notices-wrapper .woocommerce-error li::before {
             content: "\274C ";
             font-size: 16px;
             margin-right: 5px;
         }
 
-        .woocommerce .woocommerce-notices-wrapper .woocommerce-error[role="alert"]::before {
+        .woocommerce-notices-wrapper .woocommerce-error[role="alert"]::before {
             content: none !important;
         }
     </style>';
