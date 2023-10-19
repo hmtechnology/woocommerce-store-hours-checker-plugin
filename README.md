@@ -43,11 +43,11 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 4. Customers will see the error message and be unable to check out outside of store hours.
 
 ## Screenshot
-![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-0.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshot-0.jpg)
 
-![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-1.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshot-1.jpg)
 
-![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshots/screenshot-2.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshot-2.jpg)
 
 ## Contributing
 Contributions are welcome! If you have any improvements or new features to suggest, please open an issue or submit a pull request. We appreciate your feedback.
