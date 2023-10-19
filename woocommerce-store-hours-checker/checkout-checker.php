@@ -1,11 +1,11 @@
 <?php
-
 // Add style to error message
 function add_custom_checkout_error_style() {
     $background_color = get_option('custom_css_background_color', '');
     $border_color = get_option('custom_css_border_color', '');
     $text_color = get_option('custom_css_color_text', '');
-
+    $error_background_color = get_option('custom_error_background_color', ''); 
+	
     echo '<style>
         .woocommerce .woocommerce-notices-wrapper {
             background-color: ' . esc_attr($background_color) . ';
@@ -19,8 +19,13 @@ function add_custom_checkout_error_style() {
             color: ' . esc_attr($text_color) . ';
             list-style-type: none;
         }
+
+        .woocommerce .woocommerce-notices-wrapper .woocommerce-error {
+            background: ' . esc_attr($error_background_color) . ';
+            border-top: 0 !important;
+        }
 		
-        .woocommerce .woocommerce-notices-wrapper .woocommerce-error li {
+		.woocommerce .woocommerce-notices-wrapper .woocommerce-error li {
             list-style-type: none;
         }
 
@@ -32,10 +37,6 @@ function add_custom_checkout_error_style() {
 
         .woocommerce .woocommerce-notices-wrapper .woocommerce-error[role="alert"]::before {
             content: none !important;
-        }
-
-        .woocommerce .woocommerce-notices-wrapper .woocommerce-error {
-            border-top: 0 !important;
         }
     </style>';
 }
