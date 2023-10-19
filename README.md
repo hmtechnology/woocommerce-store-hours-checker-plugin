@@ -8,11 +8,10 @@ The WooCommerce Store Hours Checker is a WordPress plugin designed to help you m
 2. [Features](#features)
 3. [Installation](#installation)
 4. [Configuration](#configuration)
-5. [Usage](#usage)
-6. [Screenshot](#screenshot)
-7. [Contributing](#contributing)
-8. [License](#license)
-9. [Author](#author)
+5. [Screenshot](#screenshot)
+6. [Contributing](#contributing)
+7. [License](#license)
+8. [Author](#author)
 
 ## Description
 The WooCommerce Store Hours Checker plugin is a versatile WordPress extension designed for businesses that need to manage and enforce specific store hours. With this plugin, you can set and configure your store's operating hours and restrict checkout access outside these hours. You can also define a custom error message to display to customers attempting to check out when the store is closed.
@@ -23,6 +22,7 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 - **Multiple Time Slots:** Configure multiple opening and closing time slots for each day.
 - **Custom Error Message:** Customize the message shown to customers when the store is closed.
 - **Custom CSS Styles:** Set background and border colors for the error message.
+- **Store Hour Status:** Display the current store hour status to indicate whether the online store is considered open or closed.
 - **Reset Functionality:** Easily reset store hours to default settings.
 
 ## Installation
@@ -36,18 +36,14 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 3. Customize the error message and CSS styles on the "Store Hours Settings" page.
 4. Optionally, reset store hours to default settings using the provided button.
 
-## Usage
-1. Set your store's operating hours and timezone in the plugin settings.
-2. Configure specific time slots for each day as needed.
-3. Customize the error message and CSS styles.
-4. Customers will see the error message and be unable to check out outside of store hours.
-
 ## Screenshot
-![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshot-0.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshots-0.jpg)
 
-![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshot-1.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshots-1.jpg)
 
-![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshot-2.jpg)
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshots-2.jpg)
+
+![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshots-3.jpg)
 
 ## Contributing
 Contributions are welcome! If you have any improvements or new features to suggest, please open an issue or submit a pull request. We appreciate your feedback.
