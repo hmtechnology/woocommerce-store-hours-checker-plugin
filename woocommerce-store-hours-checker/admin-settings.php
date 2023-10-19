@@ -340,7 +340,7 @@ function store_hours_settings_page() {
 					<th scope="row">Background Color</th>
 					<td>
 						<?php
-						$background_color = esc_attr(get_option('custom_css_background_color', '#ff3333'));
+						$background_color = esc_attr(get_option('custom_css_background_color', '#f7f7f7'));
 						?>
 						<input type="text" name="custom_css_background_color" value="<?php echo $background_color; ?>" class="color-field" />
 						<p>Select the background color for the error message.</p>
@@ -364,16 +364,6 @@ function store_hours_settings_page() {
 						?>
 						<input type="text" name="custom_css_color_text" value="<?php echo $text_color; ?>" class="color-field" />
 						<p>Choose the text color for the error message.</p>
-					</td>
-				</tr>
-				<tr valign="top">
-					<th scope="row">Background Text</th>
-					<td>
-						<?php
-						$error_background_color = esc_attr(get_option('custom_error_background_color', '#f7f7f7'));
-						?>
-						<input type="text" name="custom_error_background_color" value="<?php echo $error_background_color; ?>" class="color-field" />
-						<p>Select the background color for the error message box.</p>
 					</td>
 				</tr>
 			</table>
@@ -406,7 +396,4 @@ if (isset($_POST['submit_custom_message'])) {
 
     $text_color = sanitize_text_field($_POST['custom_css_color_text']);
     update_option('custom_css_color_text', $text_color);
-	
-	$error_background_color = sanitize_text_field($_POST['custom_error_background_color']);
-    update_option('custom_error_background_color', $error_background_color);
 }
