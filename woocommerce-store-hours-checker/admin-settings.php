@@ -338,12 +338,12 @@ function store_hours_settings_page() {
 					<th scope="row">Text Color</th>
 					<td>
 						<select name="custom_css_color_text">
-							<option value="#333333" <?php selected(get_option('custom_css_color_text', ''), '#ff3333'); ?>>Default (Black)</option>
+							<option value="#333333" <?php selected(get_option('custom_css_color_text', ''), '#333333'); ?>>Default (Black)</option>
 							<option value="#33ff33" <?php selected(get_option('custom_css_color_text', ''), '#33ff33'); ?>>Green</option>
 							<option value="#3333ff" <?php selected(get_option('custom_css_color_text', ''), '#3333ff'); ?>>Blue</option>
 							<option value="#ffff33" <?php selected(get_option('custom_css_color_text', ''), '#ffff33'); ?>>Yellow</option>
 							<option value="#ff33ff" <?php selected(get_option('custom_css_color_text', ''), '#ff33ff'); ?>>Purple</option>
-							<option value="#ff3333" <?php selected(get_option('custom_css_color_text', ''), '#333333'); ?>>Red</option>
+							<option value="#ff3333" <?php selected(get_option('custom_css_color_text', ''), '#ff3333'); ?>>Red</option>
 							<option value="#ffffff" <?php selected(get_option('custom_css_color_text', ''), '#ffffff'); ?>>White</option>
 							<option value="#999999" <?php selected(get_option('custom_css_color_text', ''), '#999999'); ?>>Gray</option>
 						</select>
