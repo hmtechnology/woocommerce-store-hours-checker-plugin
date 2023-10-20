@@ -20,6 +20,7 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 - **Timezone Selection:** Choose the store's timezone to ensure accurate time calculations.
 - **Store Hours Configuration:** Set the operating hours for each day of the week.
 - **Multiple Time Slots:** Configure multiple opening and closing time slots for each day.
+- **Closure Dates:** Configure specific dates when your store will be closed.
 - **Custom Error Message Popup:** Present a customizable error message as a popup to customers when the store is closed.
 - **Custom CSS Styles:** Set background, border colors and color text for the error message.
 - **Store Hour Status:** Display the current store hour status to indicate whether the online store is considered open or closed.
@@ -33,8 +34,9 @@ The WooCommerce Store Hours Checker plugin is a versatile WordPress extension de
 ## Configuration
 1. After activation, go to the "WooCommerce Store Hours" settings page in the WordPress admin panel.
 2. Configure the store hours for each day of the week and set the timezone.
-3. Customize the error message and CSS styles on the "Store Hours Settings" page.
-4. Optionally, reset store hours to default settings using the provided button.
+3. Optionally, set specific days such as holidays, special occasions, or any other events when the store will be closed.
+4. Customize the error message and CSS styles on the "Store Hours Settings" page.
+5. Optionally, reset store hours to default settings using the provided button.
 
 ## Screenshot
 ![Screen](https://github.com/hmtechnology/woocommerce-store-hours-checker-plugin/blob/main/screenshot/screenshots-0.jpg)
