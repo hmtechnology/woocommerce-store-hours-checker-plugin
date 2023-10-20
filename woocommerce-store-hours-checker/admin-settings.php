@@ -13,7 +13,7 @@ function add_reset_store_hours_button() {
 
         if (isset($_POST['reset_store_hours'])) {
             reset_store_hours(); // Call the function to reset store hours
-			reset_closure_dates(); // Call the function to reset closure dates
+	    reset_closure_dates(); // Call the function to reset closure dates
         }
     }
 }
