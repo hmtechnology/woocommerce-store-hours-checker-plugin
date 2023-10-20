@@ -61,8 +61,8 @@ function is_store_open() {
         }
     }
 
-    // If no matching conditions are found, assume the store is open
-    return true;
+    // If no matching conditions are found, assume the store is closed
+    return false;
 }
 
 // Enqueue necessary scripts and styles for the WordPress admin panel.
