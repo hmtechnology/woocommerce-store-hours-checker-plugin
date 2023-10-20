@@ -2,9 +2,9 @@
 
 // Add style to error message
 function add_custom_checkout_error_style() {
-    $background_color = get_option('custom_css_background_color', '');
-    $border_color = get_option('custom_css_border_color', '');
-    $text_color = get_option('custom_css_color_text', '');
+    $background_color = get_option('custom_css_background_color', '#f7f7f7');
+    $border_color = get_option('custom_css_border_color', '#ff3333');
+    $text_color = get_option('custom_css_color_text', '#333333');
 	
     echo '<style>
         .woocommerce-notices-wrapper {
