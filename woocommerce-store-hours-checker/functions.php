@@ -27,7 +27,7 @@ add_action('admin_notices', 'add_refresh_on_save');
 // Function to check if the store is open
 function is_store_open() {
     $current_day = strtolower(date('l'));
-    $current_time = date('H:i');
+    $current_time = strtotime(date('H:i'));
 
     $store_hours = get_option('store_hours', array());
     $closure_dates = get_option('closure_dates', array());
@@ -53,7 +53,6 @@ function is_store_open() {
         } elseif ($time_range['type'] === 'open') {
             $open_time = strtotime($time_range['open']);
             $close_time = strtotime($time_range['close']);
-            $current_time = strtotime($current_time);
 
             if ($current_time >= $open_time && $current_time <= $close_time) {
                 return true; // Store is open during specified hours
