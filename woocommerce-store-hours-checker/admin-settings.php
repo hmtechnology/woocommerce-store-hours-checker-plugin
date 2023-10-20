@@ -13,6 +13,7 @@ function add_reset_store_hours_button() {
 
         if (isset($_POST['reset_store_hours'])) {
             reset_store_hours(); // Call the function to reset store hours
+			reset_closure_dates(); // Call the function to reset closure dates
         }
     }
 }
@@ -106,13 +107,25 @@ function store_hours_page() {
             }
         }
 
+        // Process closure dates
+        $closure_dates = array();
+
+        if (isset($_POST['closure_dates'])) {
+            $closure_dates = $_POST['closure_dates'];
+
+            // Remove any empty dates
+            $closure_dates = array_filter($closure_dates);
+        }
+		
         update_option('store_hours', $store_hours);
+        update_option('closure_dates', $closure_dates);
     }
 
     if (isset($_POST['timezone'])) {
         update_option('store_timezone', $_POST['timezone']);
     }
 
+    $closure_dates = get_option('closure_dates', array());
     $store_hours = get_option('store_hours', array());
     $store_timezone = get_option('store_timezone', 'Europe/Rome');
     ?>
@@ -173,12 +186,63 @@ function store_hours_page() {
                 }
                 ?>
             </table>
+        <h3>Closure Dates Configuration</h3>
+        <table class="form-table">
+            <tr valign="top">
+                <th scope="row">Closure Dates</th>
+                <td>
+                    <div id="closure-dates-container">
+                        <?php
+                        foreach ($closure_dates as $closure_date) {
+                            echo '<div class="closure-date">
+                                    <input type="date" name="closure_dates[]" value="' . esc_attr($closure_date) . '">
+                                    <button type="button" class="remove-closure-date">Remove</button>
+                                </div>';
+                        }
+                        ?>
+                    </div>
+                    <button type="button" id="add-closure-date">Add Closure Date</button>
+                    <p>Select the dates when the store will be closed.</p>
+                </td>
+            </tr>
+        </table>
             <input type="hidden" name="submit_store_hours" value="1">
             <?php submit_button(); ?>
         </form>
     </div>
 
 <script>
+    document.addEventListener('DOMContentLoaded', function() {
+        // Add closure date
+        var addClosureDateButton = document.querySelector('#add-closure-date');
+        if (addClosureDateButton) {
+            addClosureDateButton.addEventListener('click', function() {
+                var closureDatesContainer = document.querySelector('#closure-dates-container');
+                var newClosureDateContainer = document.createElement('div');
+                newClosureDateContainer.className = 'closure-date';
+                newClosureDateContainer.innerHTML = `
+                    <input type="date" name="closure_dates[]">
+                    <button type="button" class="remove-closure-date">Remove</button>
+                `;
+                newClosureDateContainer.querySelector('.remove-closure-date').addEventListener('click', removeClosureDate);
+                closureDatesContainer.appendChild(newClosureDateContainer);
+            });
+        }
+
+        // Remove closure date
+        var removeClosureDateButtons = document.querySelectorAll('.remove-closure-date');
+        if (removeClosureDateButtons) {
+            removeClosureDateButtons.forEach(function(button) {
+                button.addEventListener('click', removeClosureDate);
+            });
+        }
+
+        function removeClosureDate() {
+            var closureDateContainer = this.parentNode;
+            closureDateContainer.parentNode.removeChild(closureDateContainer);
+        }
+    });
+
 // Function to generate time options for a select input
 function generate_time_options(selectedTime) {
     var options = '';
