@@ -47,9 +47,9 @@ function add_custom_checkout_popup() {
     if (empty($custom_error_message)) {
         $custom_error_message = 'The store is closed outside of the opening hours.';
     }
-    $background_color = get_option('custom_css_background_color', '');
-    $border_color = get_option('custom_css_border_color', '');
-    $text_color = get_option('custom_css_color_text', '');
+    $background_color = get_option('custom_css_background_color', '#f7f7f7');
+    $border_color = get_option('custom_css_border_color', '#ff3333');
+    $text_color = get_option('custom_css_color_text', '#333333');
 ?>
     <div id="custom-checkout-popup" class="custom-checkout-popup">
         <div class="popup-content">
