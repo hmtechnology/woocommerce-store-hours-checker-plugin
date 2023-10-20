@@ -42,6 +42,10 @@ function is_store_open() {
         return false; // Store is closed on the current date
     }
 
+    if (empty($store_hours) && empty($closure_dates)) {
+        return true; // If there are no closure dates and store hours defined, consider the store open.
+    }
+    
     if (isset($store_hours[$current_day])) {
         foreach ($store_hours[$current_day] as $time_range) {
             if ($time_range['type'] === '24h') {
