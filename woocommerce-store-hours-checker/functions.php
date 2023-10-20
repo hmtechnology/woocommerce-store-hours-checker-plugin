@@ -32,41 +32,38 @@ function is_store_open() {
     $store_hours = get_option('store_hours', array());
     $closure_dates = get_option('closure_dates', array());
 
-    if (empty($store_hours)) {
-        return true; // The store is considered open if there are no configured hours.
-    }
-
-    // Check if the current date is a closure date
     $current_date = date('Y-m-d');
+
+    // Check if the current date is in the closure dates array
     if (in_array($current_date, $closure_dates)) {
         return false; // Store is closed on the current date
     }
 
-    if (empty($store_hours) && empty($closure_dates)) {
-        return true; // If there are no closure dates and store hours defined, consider the store open.
+    // If no specific store hours are defined for the current day, assume the store is open
+    if (empty($store_hours) || empty($store_hours[$current_day])) {
+        return true; // Store is considered open by default
     }
-    
-    if (isset($store_hours[$current_day])) {
-        foreach ($store_hours[$current_day] as $time_range) {
-            if ($time_range['type'] === '24h') {
-                return true; // Store is open 24 hours
-            } elseif ($time_range['type'] === 'closed') {
-                return false; // Store is closed
-            } elseif ($time_range['type'] === 'open') {
-                $open_time = strtotime($time_range['open']);
-                $close_time = strtotime($time_range['close']);
-                $current_time = strtotime($current_time);
 
-                if ($current_time >= $open_time && $current_time <= $close_time) {
-                    return true;
-                }
+    // Check specific opening hours if defined for the current day
+    foreach ($store_hours[$current_day] as $time_range) {
+        if ($time_range['type'] === '24h') {
+            return true; // Store is open 24 hours
+        } elseif ($time_range['type'] === 'closed') {
+            return false; // Store is closed
+        } elseif ($time_range['type'] === 'open') {
+            $open_time = strtotime($time_range['open']);
+            $close_time = strtotime($time_range['close']);
+            $current_time = strtotime($current_time);
+
+            if ($current_time >= $open_time && $current_time <= $close_time) {
+                return true; // Store is open during specified hours
             }
         }
     }
 
-    return false;
+    // If no matching conditions are found, assume the store is open
+    return true;
 }
-
 
 // Enqueue necessary scripts and styles for the WordPress admin panel.
 function enqueue_admin_scripts() {
