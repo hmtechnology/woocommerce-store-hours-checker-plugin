@@ -111,7 +111,7 @@ function store_hours_page() {
         $closure_dates = array();
 
         if (isset($_POST['closure_dates'])) {
-            $closure_dates = $_POST['closure_dates'];
+            $closure_dates = array_map('sanitize_text_field', $_POST['closure_dates']);
 
             // Remove any empty dates
             $closure_dates = array_filter($closure_dates);
